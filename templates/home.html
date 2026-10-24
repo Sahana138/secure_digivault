@@ -1,0 +1,82 @@
+{% extends "layout/base.html" %}
+
+{% block body_class %}home-bg{% endblock %}
+
+{% block content %}
+
+<div class="home-bg">
+    <div class="container text-center">
+
+        <!-- HERO SECTION -->
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-7">
+
+                <div class="card p-5 shadow-lg">
+
+                    <h1 class="mb-3 neon-text">🔐 Digivault</h1>
+
+                    <p class="lead">
+                        Secure your documents with advanced protection
+                    </p>
+
+                    <p class="mb-4" style="color:#cbd5e1;">
+                        Digivault provides multi-factor authentication with
+                        Face Recognition, Liveness Detection, OTP Verification
+                        and Encrypted Storage for your sensitive files.
+                    </p>
+
+                    <!-- Action buttons -->
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="/login" class="btn btn-primary btn-lg">
+                            Login
+                        </a>
+
+                        <a href="/register" class="btn btn-outline-light btn-lg">
+                            Create Account
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FEATURES SECTION -->
+        <div class="row justify-content-center text-center mt-5 g-4">
+
+            <!-- Face authentication -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <h4>🧠 Face Authentication</h4>
+                    <p>
+                        Secure login using facial recognition technology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Anti-spoof detection -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <h4>🛡️ Anti-Spoof Detection</h4>
+                    <p>
+                        Blink detection ensures real human presence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Encrypted vault -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <h4>🔒 Encrypted Vault</h4>
+                    <p>
+                        All uploaded files are encrypted before storage.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

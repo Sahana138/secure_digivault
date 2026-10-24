@@ -1,0 +1,86 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="page-bg vault-bg">
+    <div class="vault-dashboard">
+
+        <!-- Page title -->
+        <h2 class="neon-text text-center mb-4">Secure Document Vault</h2>
+
+        <!-- STORAGE CARD -->
+        <div class="storage-card mb-4">
+            <div class="d-flex justify-content-between mb-2">
+                <span>Storage Used</span>
+                <span>{{ storage }} MB</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-info" style="width: '{{ storage }}%'"></div>
+            </div>
+        </div>
+
+        <!-- UPLOAD CARD -->
+        <div class="upload-card mb-4">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="file" name="file" class="form-control" required>
+                    <button class="btn btn-primary">Upload</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- FILE LIST -->
+        <div class="files-card">
+            <h4 class="mb-3">Stored Files</h4>
+            <div class="file-list">
+
+                {% if files %}
+
+                    {% for file in files %}
+
+                    <!-- File row -->
+                    <div class="file-row">
+
+                        <div class="file-info">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">{{ file }}</span>
+                        </div>
+
+                        <div class="file-actions">
+
+                            <a href="/download/{{ file }}" class="btn btn-success btn-sm">
+                                Download
+                            </a>
+
+                            <!-- File update -->
+                            <form action="/update/{{ file }}" method="POST" enctype="multipart/form-data" class="update-form">
+                                <input type="file" name="file" class="form-control form-control-sm file-input" required>
+                                <button class="btn btn-warning btn-sm">Update</button>
+                            </form>
+
+                            <!-- File delete -->
+                            <a href="/delete/{{ file }}" class="btn btn-danger btn-sm"
+                               onclick="return confirm('Delete this file?')">
+                                Delete
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <div class="text-center text-muted">
+                        No files uploaded yet
+                    </div>
+
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="page-bg otp-bg">
+    <div class="otp-card">
+
+        <!-- Page title -->
+        <h2 class="neon-text mb-4">OTP Verification</h2>
+
+        <!-- OTP countdown display -->
+        <div id="otp-timer" class="text-danger mb-3 fw-bold">
+            OTP expires in: <span id="countdown">01:00</span>
+        </div>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="otp"
+                maxlength="6"
+                class="form-control mb-3"
+                placeholder="Enter OTP"
+                required
+            >
+
+            <button class="btn btn-primary w-100">
+                Verify OTP
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+/* OTP expiration countdown */
+let time=60;
+let countdown=document.getElementById("countdown");
+
+function updateTimer(){
+    let minutes=Math.floor(time/60);
+    let seconds=time%60;
+
+    seconds=seconds<10?"0"+seconds:seconds;
+    countdown.innerHTML=minutes+":"+seconds;
+
+    /* redirect if OTP expired */
+    if(time<=0){
+        window.location.href="/login";
+    }
+    time--;
+}
+
+setInterval(updateTimer,1000);
+</script>
+
+{% endblock %}

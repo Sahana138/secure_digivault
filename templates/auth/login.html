@@ -1,0 +1,61 @@
+{% extends "layout/base.html" %}
+{% block body_class %}login-bg{% endblock %}
+{% block content %}
+
+<div class="page-bg login-bg">
+    <div class="auth-wrapper">
+
+        <div class="login-card p-5">
+
+            <div class="row align-items-center">
+
+                <!-- LOGIN FORM -->
+                <div class="col-md-6">
+
+                    <h3 class="neon-text mb-4">Login</h3>
+
+                    <form method="POST">
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control mb-3"
+                            placeholder="Enter Email"
+                            required
+                        >
+
+                        <button class="btn btn-primary w-100 mb-3">
+                            Login
+                        </button>
+
+                    </form>
+
+                    <!-- registration link -->
+                    <a href="/register" class="text-info">
+                        Create Account
+                    </a>
+
+                </div>
+
+                <!-- WELCOME SECTION -->
+                <div class="col-md-6 text-center">
+
+                    <h4 class="welcome-text mb-3">
+                        WELCOME TO DIGIVAULT
+                    </h4>
+
+                    <p class="text-light">
+                        Secure access to your encrypted documents with
+                        Face Authentication, Liveness Detection and OTP.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

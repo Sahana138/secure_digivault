@@ -1,0 +1,64 @@
+{% extends "layout/base.html" %}
+{% block body_class %}face-bg{% endblock %}
+{% block content %}
+
+<div class="face-container">
+    <div class="face-card">
+
+        <!-- Page title -->
+        <h3 class="neon-text mb-3">Initializing Face Authentication</h3>
+
+        <!-- Scan animation -->
+        <div class="scan-box">
+            <video
+id="video"
+autoplay
+playsinline
+style="width:100%; height:100%; object-fit:cover;">
+</video>
+            <div class="scan-line"></div>
+        </div>
+
+        <!-- Instruction text -->
+        <p class="scan-text">
+            Scanning face... Please look at the camera
+            Please wait while we verify your identity. This may take a few seconds.
+        </p>
+
+    </div>
+</div>
+
+<script>
+
+let stream;
+const video = document.getElementById("video");
+
+/* START CAMERA */
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(function(camStream){
+
+    stream = camStream;
+    video.srcObject = stream;
+
+})
+.catch(function(err){
+    console.log("Camera error:", err);
+});
+
+
+/* WAIT FOR SCAN ANIMATION */
+setTimeout(function(){
+
+    /* STOP BROWSER CAMERA */
+    if(stream){
+        stream.getTracks().forEach(track => track.stop());
+    }
+
+    /* REDIRECT TO PYTHON FACE AUTH */
+    window.location.href="/process-face";
+
+},2500);
+
+</script>
+
+{% endblock %}

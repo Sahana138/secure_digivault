@@ -1,0 +1,9 @@
+venv/
+.env
+vault.key
+vault_storage/
+instance/
+dataset/
+__pycache__/
+*.pyc
+shape_predictor_68_face_landmarks.dat

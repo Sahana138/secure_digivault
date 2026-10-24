@@ -1,0 +1,463 @@
+/* GLOBAL */
+
+html,body{
+margin:0;
+padding:0;
+height:100%;
+overflow:hidden;
+}
+
+body{
+padding-top:70px;
+background-color:black;
+}
+
+
+/* PAGE BACKGROUNDS */
+
+.home-bg,
+.login-bg,
+.register-bg,
+.otp-bg,
+.vault-bg,
+.face-bg{
+min-height:100vh;
+width:100%;
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* Individual pages */
+
+.home-bg{
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("../images/home.jpg");
+}
+
+.login-bg{
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url("../images/login.webp");
+}
+
+.register-bg{
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url("../images/register.jpg");
+}
+
+.otp-bg{
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url("../images/home.jpg");
+}
+
+.vault-bg{
+background:
+linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+url("../images/login.webp");
+}
+
+.face-bg{
+background:url("../images/login.webp") center/cover no-repeat;
+}
+
+
+/* CARD */
+
+.card{
+background:rgba(20,25,40,.55);
+backdrop-filter:blur(16px);
+border-radius:18px;
+border:1px solid rgba(0,255,255,.35);
+box-shadow:
+0 0 12px rgba(0,255,255,.35),
+0 0 30px rgba(0,0,0,.6);
+transition:.35s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:
+0 0 25px rgba(0,255,255,.7),
+0 0 60px rgba(0,0,0,.8);
+}
+
+
+/* AUTH CARDS */
+
+.register-card{
+width:420px!important;
+height:420px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:40px;
+}
+
+.register-card .form-control{
+height:40px;
+margin-bottom:12px!important;
+}
+
+.register-card .btn{
+margin-top:10px;
+}
+
+.login-card{
+width:800px;
+max-width:90%;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(12px);
+border-radius:18px;
+border:1px solid rgba(0,255,255,.35);
+padding:40px 35px;
+box-shadow:
+0 0 25px rgba(0,255,255,.25),
+0 0 50px rgba(0,255,255,.08);
+color:white;
+}
+
+.face-card{
+width:360px;
+padding:35px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(12px);
+border-radius:18px;
+border:1px solid rgba(0,255,255,.25);
+box-shadow:0 0 25px rgba(0,255,255,.25);
+text-align:center;
+color:white;
+}
+
+
+/* OTP CARD */
+
+.otp-bg .otp-card{
+width:400px;
+height:400px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+margin:auto;
+background:rgba(10,15,30,.85);
+backdrop-filter:blur(12px);
+border-radius:18px;
+border:1px solid rgba(0,255,255,.3);
+box-shadow:0 0 30px rgba(0,255,255,.15);
+}
+
+.otp-bg .otp-card input{
+width:100%;
+height:42px;
+margin-bottom:15px;
+}
+
+.otp-bg .otp-card button{
+width:100%;
+}
+
+
+/* TEXT */
+.card h4{
+color:#7ef9ff;
+text-shadow:0 0 8px rgba(0,255,255,0.6);
+}
+
+.card p{
+color:white;
+opacity:0.85;
+}
+
+.neon-text{
+color:#00ffff;
+text-shadow:
+0 0 5px #00ffff,
+0 0 10px #00ffff,
+0 0 20px #00ffff;
+}
+
+.welcome-text{
+font-size:16px;
+opacity:.9;
+color:#6ffcff;
+font-weight:600;
+animation:floatText 4s ease-in-out infinite;
+}
+
+.lead{
+color:#e2e8f0;
+font-weight:500;
+}
+
+
+/* INPUT */
+
+input{
+background:rgba(255,255,255,.15)!important;
+color:white!important;
+border:none!important;
+}
+
+input::placeholder{
+color:#ddd;
+}
+
+.form-control{
+background:rgba(255,255,255,.12);
+border:none;
+color:white;
+}
+
+.form-control::placeholder{
+color:#cfcfcf;
+}
+
+.form-control:focus{
+background:rgba(255,255,255,.18);
+color:white;
+box-shadow:none;
+}
+
+
+/* BUTTON */
+
+.btn-primary{
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+border:none;
+border-radius:8px;
+font-weight:500;
+box-shadow:0 0 10px rgba(0,255,255,.4);
+}
+
+.btn-primary:hover{
+background:linear-gradient(135deg,#0284c7,#1d4ed8);
+box-shadow:0 0 18px rgba(0,255,255,.7);
+}
+
+
+/* FACE SCAN */
+
+.scan-container{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.scan-box{
+width:220px;
+height:220px;
+border:2px solid cyan;
+border-radius:12px;
+position:relative;
+box-shadow:0 0 10px cyan,0 0 25px cyan;
+overflow:hidden;
+margin:30px auto;
+}
+
+.scan-line{
+width:100%;
+height:3px;
+background:cyan;
+position:absolute;
+animation:scan 2s infinite;
+}
+
+.scan-text{
+color:#cbd5e1;
+font-size:14px;
+}
+
+
+/* VAULT DASHBOARD */
+
+.vault-dashboard{
+max-width:1100px;
+width:95%;
+margin:auto;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:18px;
+border:1px solid rgba(0,255,255,.25);
+padding:40px;
+box-shadow:0 0 30px rgba(0,255,255,.15);
+color:white;
+}
+
+.progress{
+height:10px;
+background:rgba(255,255,255,.15);
+border-radius:10px;
+overflow:hidden;
+}
+
+.progress-bar{
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+box-shadow:0 0 10px rgba(0,255,255,.5);
+}
+
+
+/* FILE LIST */
+
+.file-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.file-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.6);
+padding:12px 15px;
+border-radius:10px;
+transition:.2s;
+}
+
+.file-row:hover{
+background:rgba(0,255,255,.08);
+}
+
+.file-info{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+}
+
+.file-actions{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.file-input{
+width:160px;
+}
+
+
+/* FLASH MESSAGES */
+
+.flash-wrapper{
+position:fixed;
+top:90px;
+left:50%;
+transform:translateX(-50%);
+z-index:9999;
+width:420px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.flash-message{
+padding:14px 20px;
+border-radius:10px;
+font-size:14px;
+font-weight:500;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(0,0,0,.4);
+animation:fadeSlide .4s ease;
+}
+
+.flash-success{
+background:rgba(16,185,129,.15);
+color:#34d399;
+border:1px solid rgba(16,185,129,.5);
+}
+
+.flash-danger{
+background:rgba(239,68,68,.15);
+color:#f87171;
+border:1px solid rgba(239,68,68,.5);
+}
+
+.flash-warning{
+background:rgba(245,158,11,.15);
+color:#fbbf24;
+border:1px solid rgba(245,158,11,.5);
+}
+
+.flash-info{
+background:rgba(59,130,246,.15);
+color:#60a5fa;
+border:1px solid rgba(59,130,246,.5);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes floatText{
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes scan{
+0%{top:0;}
+50%{top:100%;}
+100%{top:0;}
+}
+
+@keyframes fadeSlide{
+from{opacity:0;transform:translate(-50%,-10px);}
+to{opacity:1;transform:translate(-50%,0);}
+}
+
+
+/* LAYOUT FIXES */
+
+.navbar{
+margin-bottom:0!important;
+border-bottom:none!important;
+}
+
+.container,
+.container-fluid{
+padding-top:0!important;
+margin-top:0!important;
+}
+
+.auth-container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.face-container{
+width:100%;
+min-height:calc(100vh - 70px);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.vault-bg{
+overflow-y:auto;
+height:calc(100vh - 70px);
+}
+
+.vault-bg .vault-dashboard{
+margin-bottom:40px;
+}
+
+#camera-feed{
+width:100%;
+height:100%;
+object-fit:cover;
+}
