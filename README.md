@@ -24,6 +24,20 @@ Passwords can be guessed, phished or brute-forced. Many face-login systems can b
 4. A 6-digit OTP is emailed and must be entered before it expires.
 5. On success, the user reaches the encrypted vault. Any failure increases the failed-attempt count.
 
+## Screenshots
+
+| Home | Register |
+|---|---|
+| ![Home](screenshots/home.png) | ![Register](screenshots/registeration.png) |
+
+| Login | Face authentication |
+|---|---|
+| ![Login](screenshots/login.png) | ![Face authentication](screenshots/face%20Authentication.png) |
+
+| OTP verification | Secure vault |
+|---|---|
+| ![OTP verification](screenshots/otp%20verification.png) | ![Vault](screenshots/vault.png) |
+
 ## Tech stack
 
 | Area | Tools |
